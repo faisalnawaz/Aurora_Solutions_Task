@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nameprint-app
+  name: nameprint-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nameprint-app
+  template:
+    metadata:
+      labels:
+        app: nameprint-app
+    spec:
+      containers:
+      - name: backend-app
+        image: backend:latest
+        ports:
+        - containerPort: 5000
+        
+      - name: frontend-app
+        image: frontend:latest
+        ports:
+        - containerPort: 5001
+
+      
