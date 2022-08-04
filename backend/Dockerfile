@@ -1,4 +1,3 @@
-#Docker File for Backend.py
 
 FROM python:3.8-slim-buster
 
